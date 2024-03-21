@@ -7,7 +7,7 @@ interface PropsData {
 }
 
 const Modal = ({ modal, projects }: PropsData) => {
-  const { active, index } = modal;
+  const { index } = modal;
 
   return (
     <div className="modal-container">

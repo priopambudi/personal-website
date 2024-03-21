@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Projects from '../../components/projects';
 import './home.css';
 import Modal from '../../components/modal';
