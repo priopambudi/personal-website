@@ -2,11 +2,11 @@
   "name": "personal-web",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://priopambudi.github.io/personal-website",
+  "homepage": "https://priopambudi.github.io/personal-website/",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",

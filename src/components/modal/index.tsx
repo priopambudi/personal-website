@@ -22,7 +22,7 @@ const Modal = ({ modal, projects }: PropsData) => {
             >
               <img
                 className="h-auto"
-                src={`/images/${src}`}
+                src={`./images/${src}`}
                 alt={`img-${title}`}
                 width={300}
                 height={0}
