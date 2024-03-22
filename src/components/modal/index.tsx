@@ -61,9 +61,14 @@ const Modal = ({ modal, projects }: PropsData) => {
       >
         <div className="modal-slider" style={{ top: `${-100 * index}%` }}>
           {projects.map((project: ProjectProps, indx: number) => {
-            const { src, color, title } = project;
+            const { src, bg, title } = project;
             return (
-              <div className="modal" style={{ backgroundColor: color }} key={`modal-${indx}`}>
+              <a
+                href={`${project.link}`}
+                className="modal"
+                style={{ background: `url("./images/${bg}")`, backgroundSize: 'cover' }}
+                key={`modal-${indx}`}
+              >
                 <img
                   className="h-auto"
                   src={`./images/${src}`}
@@ -72,7 +77,7 @@ const Modal = ({ modal, projects }: PropsData) => {
                   height={0}
                   loading="lazy"
                 />
-              </div>
+              </a>
             );
           })}
         </div>

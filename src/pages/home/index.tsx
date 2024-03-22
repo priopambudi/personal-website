@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import Projects from '../../components/projects';
+import { useRef, useState } from 'react';
+import Projects from '../../sections/projects';
 import './home.css';
 import Modal from '../../components/modal';
 
@@ -10,48 +10,73 @@ export interface Props {
 export interface ProjectProps {
   title: string;
   src: string;
-  color: string;
+  bg: string;
+  link: string;
 }
 
 const projects = [
   {
-    title: 'C2 Montreal',
-    src: 'c2montreal.png',
-    color: '#000000',
+    title: 'VCGamers',
+    src: 'vcgamers.webp',
+    bg: 'bg-vcg.webp',
+    link: 'https://vcgamers.com',
   },
   {
-    title: 'Office Studio',
-    src: 'officestudio.png',
-    color: '#8C8C8C',
+    title: 'MERN Ecommerce',
+    src: 'mini-ecommerce.webp',
+    bg: 'bg-miniecom.webp',
+    link: 'https://github.com/priopambudi/mern-ecommerce',
   },
   {
-    title: 'Locomotive',
-    src: 'locomotive.png',
-    color: '#EFE8D3',
+    title: 'Bithour',
+    src: 'bithour.webp',
+    bg: 'bg-bithour.webp',
+    link: 'https://bithourproduction.com/',
   },
   {
-    title: 'Silencio',
-    src: 'silencio.png',
-    color: '#706D63',
+    title: 'Calculator',
+    src: 'calculator.webp',
+    bg: 'bg-calculator.webp',
+    link: 'https://online-simple-calculator.netlify.app/',
   },
+  // {
+  //   title: 'Scissors',
+  //   src: 'scissors.webp',
+  //   bg: 'bg-scissors.webp',
+  // },
+  // {
+  //   title: 'ToDo App',
+  //   src: 'simplytodoapps.webp',
+  //   bg: 'bg-todoapp.webp',
+  // },
+  // {
+  //   title: 'Register Form',
+  //   src: 'signup.webp',
+  //   bg: 'bg-form.webp',
+  // },
+  // {
+  //   title: 'Quiz',
+  //   src: 'quizz.webp',
+  //   bg: 'bg-quiz.webp',
+  // },
 ];
 
 const Home = () => {
   const [modal, setModal] = useState<Props>({ active: false, index: 0 });
+  const containerOuter = useRef(null);
 
   return (
     <div className="container mx-auto">
-      <div className="flex h-screen items-center justify-center">
-        <div className="w-full flex flex-col items-center justify-center">
+      <div ref={containerOuter} className="flex min-h-max h-screen items-center justify-center">
+        <div className="w-full flex flex-col items-center justify-center projects-wrap">
           {projects?.map((project: ProjectProps, indx: number) => {
             return (
               <Projects
                 key={indx}
                 index={indx}
                 title={project.title}
-                setModal={(data) =>
-                  setModal({ active: data.active, index: data.index })
-                }
+                setModal={(data) => setModal({ active: data.active, index: data.index })}
+                url={project.link}
               />
             );
           })}

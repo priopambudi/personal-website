@@ -14,7 +14,7 @@
 .project h3 {
   font-size: 60px;
   margin: 0px;
-  font-weight: 400;
+  font-weight: 500;
   transition: all 0.3s linear;
 }
 .project:hover h3 {
