@@ -1,9 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Enriqueta:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Source Serif Pro';
+  src:
+    url('./fonts/SourceSerifPro-Black.otf') format('otf'),
+    url('./fonts/SourceSerifPro-BlackIt.otf') format('otf'),
+    url('./fonts/SourceSerifPro-Bold.otf') format('otf'),
+    url('./fonts/SourceSerifPro-BoldIt.otf') format('otf'),
+    url('./fonts/SourceSerifPro-ExtraLight.otf') format('otf'),
+    url('./fonts/SourceSerifPro-ExtraLightIt.otf') format('otf'),
+    url('./fonts/SourceSerifPro-It.otf') format('otf'),
+    url('./fonts/SourceSerifPro-Light.otf') format('otf'),
+    url('./fonts/SourceSerifPro-LightIt.otf') format('otf'),
+    url('./fonts/SourceSerifPro-Regular.otf') format('otf'),
+    url('./fonts/SourceSerifPro-Semibold.otf') format('otf'),
+    url('./fonts/SourceSerifPro-SemiboldIt.otf') format('otf');
+}
+
 body {
   box-sizing: border-box;
-  font-family: 'Enriqueta', serif;
+  font-family: 'Source Serif Pro', serif;
 }
