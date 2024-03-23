@@ -1,11 +1,9 @@
-import { ReactElement, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import './header.css';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 
 const Header = () => {
-  // const [windowsWidth, setWindowsWidth] = useState(0);
-  const blockSize = window.innerWidth * 0.05;
   const firstText = useRef(null);
   const secondText = useRef(null);
   const slider = useRef(null);
@@ -15,7 +13,6 @@ const Header = () => {
   useEffect(() => {
     handleScroll();
     requestAnimationFrame(animate);
-    // setWindowsWidth(window.innerWidth);
   }, []);
 
   const animate = () => {

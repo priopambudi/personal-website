@@ -1,0 +1,20 @@
+.cursor-outer {
+  width: 3vw;
+  height: 3vw;
+  background: var(--bg-main);
+  border: 2px solid var(--primary);
+  border-radius: 100%;
+  padding: 0.7vw;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+.cursor-inner {
+  width: 1vw;
+  height: 1vw;
+  background: var(--primary);
+  border-radius: 100%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}

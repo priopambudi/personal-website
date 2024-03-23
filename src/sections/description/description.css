@@ -1,0 +1,26 @@
+.description-section {
+  background: #f3f3f3;
+  padding: 30vh 0;
+}
+.description-section h3 {
+  font-size: 4vw;
+  font-family: 'DM Sans';
+}
+.description-section .paragraph {
+  display: flex;
+  font-size: 60px;
+  line-height: 1;
+  padding: 40px;
+  max-width: 1280px;
+  color: var(--primary);
+  flex-wrap: wrap;
+}
+.description-section .word {
+  position: relative;
+  margin-right: 12px;
+  margin-top: 12px;
+}
+.description-section .shadow {
+  position: absolute;
+  opacity: 5%;
+}
