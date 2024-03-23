@@ -1,20 +1,16 @@
 import { useEffect, useRef } from 'react';
 import './cursor.css';
 import { gsap } from 'gsap';
-import { motion } from 'framer-motion';
-
-const scaleAnimation = {
-  initial: { scale: 0, x: '-50%', y: '-50%' },
-};
 
 export default function Cursor() {
-  const outer = useRef(null);
-  const inner = useRef(null);
+  const outer = useRef<HTMLDivElement>(null);
+  const inner = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const cursorOuter = outer.current;
     const cursorInner = inner.current;
     const header = document.querySelector('.header');
+    const paragraph = document.querySelector('.paragraph');
     let moveX = gsap.quickTo(cursorOuter, 'left', { duration: 0.7, ease: 'power3' });
     let moveY = gsap.quickTo(cursorOuter, 'top', { duration: 0.7, ease: 'power3' });
     let innerX = gsap.quickTo(cursorInner, 'left', { duration: 0.5, ease: 'power3' });
@@ -27,47 +23,46 @@ export default function Cursor() {
       innerX(clientX);
       innerY(clientY);
     });
-    document.addEventListener('mouseenter', () => {
-      gsap.to(cursorOuter, {
-        duration: 0.7,
-        opacity: 1,
-      });
-      gsap.to(cursorInner, {
-        duration: 0.7,
-        opacity: 1,
-      });
+    document.addEventListener('mouseenter', () => showCursor());
+    document.addEventListener('mouseleave', () => hideCursor());
+    header?.addEventListener('mouseenter', () => hideCursor());
+    header?.addEventListener('mouseleave', () => showCursor());
+    paragraph?.addEventListener('mouseenter', () => {
+      cursorOuter?.classList?.add('in-paragraph');
     });
-    document.addEventListener('mouseleave', () => {
-      gsap.to(cursorOuter, {
-        duration: 0.7,
-        opacity: 0,
-      });
-      gsap.to(cursorInner, {
-        duration: 0.7,
-        opacity: 0,
-      });
-    });
-    header?.addEventListener('mouseenter', () => {
-      gsap.to(cursorOuter, {
-        duration: 0.7,
-        scale: 0,
-      });
-      gsap.to(cursorInner, {
-        duration: 0.7,
-        scale: 0,
-      });
-    });
-    header?.addEventListener('mouseleave', () => {
-      gsap.to(cursorOuter, {
-        duration: 0.7,
-        scale: 1,
-      });
-      gsap.to(cursorInner, {
-        duration: 0.7,
-        scale: 1,
-      });
+    paragraph?.addEventListener('mouseleave', () => {
+      cursorOuter?.classList?.add('removing');
+      setTimeout(() => {
+        cursorOuter?.classList?.remove('removing');
+      }, 1000);
+      cursorOuter?.classList?.remove('in-paragraph');
     });
   }, []);
+
+  const showCursor = () => {
+    gsap.to(outer.current, {
+      duration: 0.7,
+      opacity: 1,
+      scale: 1,
+    });
+    gsap.to(inner.current, {
+      duration: 0.7,
+      opacity: 1,
+      scale: 1,
+    });
+  };
+  const hideCursor = () => {
+    gsap.to(outer.current, {
+      duration: 0.7,
+      opacity: 0,
+      scale: 0,
+    });
+    gsap.to(inner.current, {
+      duration: 0.7,
+      opacity: 0,
+      scale: 0,
+    });
+  };
 
   return (
     <div className="cursor-container">

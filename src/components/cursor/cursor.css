@@ -18,3 +18,40 @@
   pointer-events: none;
   transform: translate(-50%, -50%);
 }
+.cursor-outer.in-paragraph {
+  padding: 0;
+  width: 1vw;
+  height: 1vw;
+  background: var(--primary);
+  transition: all 0.2 ease-in-out;
+  animation: changesize 0.5s ease-in-out;
+}
+.cursor-outer.removing {
+  animation: reversechangesize 0.5s ease-in-out;
+}
+@keyframes changesize {
+  0% {
+    width: 3vw;
+    height: 3vw;
+    background: transparent;
+  }
+  100% {
+    width: 1vw;
+    height: 1vw;
+    background: var(--primary);
+  }
+}
+@keyframes reversechangesize {
+  0% {
+    width: 1vw;
+    height: 1vw;
+    border-width: 0;
+    background: var(--primary);
+  }
+  100% {
+    width: 3vw;
+    height: 3vw;
+    border-width: 2px;
+    background: transparent;
+  }
+}

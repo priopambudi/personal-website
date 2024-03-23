@@ -1,5 +1,5 @@
 import { useScroll, useTransform } from 'framer-motion';
-import { ReactElement, useRef } from 'react';
+import { useRef } from 'react';
 import { motion } from 'framer-motion';
 
 interface Props {
@@ -12,12 +12,12 @@ const Paragraph = (props: any) => {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ['start 0.7', 'start 0.25'],
+    offset: ['start 0.9', 'start 0.4'],
   });
   const words = props.children.split(' ');
 
   return (
-    <h3 ref={container} className="paragraph">
+    <h3 ref={container} className="paragraph p-0">
       {words.map((word: string, indx: number) => {
         const start = indx / words.length;
         const end = start + 1 / words.length;

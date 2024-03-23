@@ -22,7 +22,7 @@ section.header {
 }
 .name-wrapper h1 {
   font-size: 6.5vw;
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1em;
 }
 .name-wrapper .slug {
@@ -85,7 +85,7 @@ section.header {
   font-weight: 400;
   font-size: 12vw;
   line-height: 1em;
-  font-family: 'DM Serif Text', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   padding-right: 50px;
   letter-spacing: 0.4vw;
 }

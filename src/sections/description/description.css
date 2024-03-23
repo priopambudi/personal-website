@@ -8,12 +8,11 @@
 }
 .description-section .paragraph {
   display: flex;
-  font-size: 60px;
+  font-size: 3rem;
   line-height: 1;
-  padding: 40px;
-  max-width: 1280px;
   color: var(--primary);
   flex-wrap: wrap;
+  cursor: default;
 }
 .description-section .word {
   position: relative;
