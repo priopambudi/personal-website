@@ -1,8 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Text:ital@0;1&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
+:root {
+  --primary: #072d44;
+  --secondary: #064469;
+  --medium-blue: #5790ab;
+  --light-blue: #9ccddb;
+  --gray: #d0d7e1;
+  --bg-main: #ecebec;
+}
+
+/* @font-face {
   font-family: 'Source Serif Pro';
   src:
     url('./fonts/SourceSerifPro-Black.otf') format('otf'),
@@ -17,9 +28,11 @@
     url('./fonts/SourceSerifPro-Regular.otf') format('otf'),
     url('./fonts/SourceSerifPro-Semibold.otf') format('otf'),
     url('./fonts/SourceSerifPro-SemiboldIt.otf') format('otf');
-}
+} */
 
 body {
+  background-color: var(--bg-main);
   box-sizing: border-box;
-  font-family: 'Source Serif Pro', serif;
+  font-family: 'DM Sans', 'DM Serif Text', serif;
+  color: var(--primary);
 }
