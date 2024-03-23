@@ -27,7 +27,7 @@ const Header = () => {
     gsap.set(firstText.current, { xPercent: xPercent });
     gsap.set(secondText.current, { xPercent: xPercent });
     requestAnimationFrame(animate);
-    xPercent += 0.1 * direction;
+    xPercent += 0.04 * direction;
   };
   const handleScroll = () => {
     gsap.registerPlugin(ScrollTrigger);

@@ -87,6 +87,7 @@ section.header {
   line-height: 1em;
   font-family: 'DM Serif Text', sans-serif;
   padding-right: 50px;
+  letter-spacing: 0.4vw;
 }
 .slider p:nth-of-type(2) {
   position: absolute;
