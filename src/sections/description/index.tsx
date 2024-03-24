@@ -10,7 +10,6 @@ const Description = () => {
           web applications.
         </Paragraph>
       </div>
-      <div className="h-screen"></div>
     </section>
   );
 };
