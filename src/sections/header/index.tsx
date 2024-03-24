@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import './header.css';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
+import Navbar from '../nav';
 
 const Header = () => {
   const firstText = useRef(null);
@@ -62,6 +63,7 @@ const Header = () => {
 
   return (
     <section className="header h-screen">
+      <Navbar />
       <div className="grid-pixel">
         {window.innerWidth > 0 &&
           [...Array(20).keys()].map((_: any, indx: number) => {

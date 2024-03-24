@@ -3,7 +3,7 @@ import './cursor.css';
 import { gsap } from 'gsap';
 
 export default function Cursor() {
-  const outer = useRef<HTMLDivElement>(null);
+  // const outer = useRef<HTMLDivElement>(null);
   const inner = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -11,6 +11,8 @@ export default function Cursor() {
     const cursorInner = inner.current;
     const header = document.querySelector('.header');
     const paragraph = document.querySelector('.paragraph');
+    const navbar = document.querySelector('nav');
+    const availableWork = document.querySelector('.available-work');
     // let moveX = gsap.quickTo(cursorOuter, 'left', { duration: 0.7, ease: 'power3' });
     // let moveY = gsap.quickTo(cursorOuter, 'top', { duration: 0.7, ease: 'power3' });
     let innerX = gsap.quickTo(cursorInner, 'left', { duration: 0.5, ease: 'power3' });
@@ -37,6 +39,20 @@ export default function Cursor() {
       gsap.to(cursorInner, {
         duration: 0.7,
         scale: 1,
+      });
+    });
+    navbar?.addEventListener('mouseenter', () => showCursor());
+    navbar?.addEventListener('mouseleave', () => hideCursor());
+    availableWork?.addEventListener('mouseenter', () => {
+      gsap.to(cursorInner, {
+        duration: 0.7,
+        opacity: 0.2,
+      });
+    });
+    availableWork?.addEventListener('mouseleave', () => {
+      gsap.to(cursorInner, {
+        duration: 0.7,
+        opacity: 1,
       });
     });
     // paragraph?.addEventListener('mouseleave', () => {

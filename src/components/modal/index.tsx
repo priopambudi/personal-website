@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
-import { ProjectProps, Props } from '../../pages/home';
+import { Props } from '../../pages/home';
+import { ProjectProps } from '../../sections/projects';
 import './modal.css';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
@@ -61,17 +62,17 @@ const Modal = ({ modal, projects }: PropsData) => {
       >
         <div className="modal-slider" style={{ top: `${-100 * index}%` }}>
           {projects.map((project: ProjectProps, indx: number) => {
-            const { src, bg, title } = project;
+            const { img, title } = project;
             return (
               <a
                 href={`${project.link}`}
                 className="modal"
-                style={{ background: `url("./images/${bg}")`, backgroundSize: 'cover' }}
+                style={{ background: `url("./images/${img[0]}")`, backgroundSize: 'cover' }}
                 key={`modal-${indx}`}
               >
                 <img
                   className="h-auto"
-                  src={`./images/${src}`}
+                  src={`./images/${img[0]}`}
                   alt={`img-${title}`}
                   width={300}
                   height={0}

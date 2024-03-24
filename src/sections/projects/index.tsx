@@ -39,7 +39,7 @@ const projects: ProjectProps[] = [
   },
   {
     title: 'Calculator',
-    desc: 'Typescript - Typescript',
+    desc: 'html - css - javascript -',
     img: ['calculator.webp'],
     link: 'https://online-simple-calculator.netlify.app/',
   },
@@ -117,7 +117,9 @@ const Link = ({ data, indx, isInView }: linkProps) => {
       onMouseLeave={(e) => animateOut(e)}
       ref={scope}
     >
-      <a href="/">{data?.title}</a>
+      <a href={data?.link} target="_blank" onClick={(e) => animateOut(e)}>
+        {data?.title}
+      </a>
       <div ref={outer} className="slider-outer">
         <div ref={inner} className="slider-inner">
           {[...Array(2)].map((_, index: number) => (
