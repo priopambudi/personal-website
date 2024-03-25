@@ -15,7 +15,7 @@ section.header {
   overflow: hidden;
 }
 .name-wrapper {
-  padding-top: 25vh;
+  padding-top: 16vh;
   mix-blend-mode: difference;
   color: var(--bg-main);
   pointer-events: none;
